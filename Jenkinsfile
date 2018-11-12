@@ -16,11 +16,16 @@ pipeline {
                 sh 'mvn -f pom.xml clean package' 
             }
         }
-    /*    stage('Deploy') {
+	}
+
+    agent { label "node2" }
+	
+        stage('Deploy') {
             steps {
-                sh 'cp target/*.war /opt/tomcat/apache-tomcat-7.0.78/webapps/'
+                wget https://github.com/ganeshhp/helloworldweb/tree/master/target/Helloworldwebapp.war
+				sh 'cp ./Helloworldwebapp.war /opt/tomcat/apache-tomcat-7.0.78/webapps/'
                 sh '/opt/tomcat/bin/shutdown.sh'
                 sh '/opt/tomcat/bin/startup.sh'
             }
-      */  }
+        }
     }
