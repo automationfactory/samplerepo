@@ -11,6 +11,8 @@
                 <input type="text" name="Address"><br>
         Age:<br>
                 <input type="number" name="Age"><br>
+        Mobile:<br>
+                <input type="number" name="Mobile"><br>
 </form> 
 
   </h2> All fields are mandatory </h2>
